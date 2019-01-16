@@ -1,0 +1,26 @@
+{
+  "name": "sgbuild",
+  "version": "1.0.0",
+  "description": "Visualizar disciplinas selecionadas no SIGAA em um calendário de horário semanal.",
+  "main": "build.js",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/falmeidaco/sgbuild.git"
+  },
+  "keywords": [
+    "sigaa"
+  ],
+  "author": "Felipe Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falmeidaco/sgbuild/issues"
+  },
+  "homepage": "https://github.com/falmeidaco/sgbuild#readme"
+}
