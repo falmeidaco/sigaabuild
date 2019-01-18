@@ -154,6 +154,15 @@ var sgb = {
             s.innerText = 'Não há disciplinas disponíveis nesse horário.';
         }
     },
+    trackUse: function() {
+        var e = document.createElement('iframe');
+        e.src = 'https://falmeidaco.github.io/sigaabuild/track.html';
+        e.name = 'sgbuild-track';
+        e.style.width = '1px';
+        e.style.height ='1px';
+        e.style.visibility = 'hidden';
+        document.getElementsByTagName('body')[0].appendChild(e);
+    },
     create:function() {
         var cl, k, c, i, e = document.querySelectorAll('input[name="selecaoTurmas"]');
         this.appendStyles();
@@ -179,6 +188,7 @@ var sgb = {
                 sgbuild.showAvailableClasses(ev.target.dataset.pos);
             }, false);
         }
+        this.trackUse();
     }
 };
 if (document.getElementById('sg-grid-container') !== null) {
