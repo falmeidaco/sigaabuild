@@ -1,18 +1,21 @@
 $dark-blue: #404e82;
 $light-blue: #c3d2ec;
 $lighten-blue: #eff3fa;
-$cel-width: 40px;
-$cel-height: 30px;
+$cel-width: 35px;
+$cel-height: 25px;
 $col-len: 18;
 $row-len: 6;
 $weekdays: seg ter qua qui sex sab;
 $h-min: 6;
 $h-max: 22;
+body {
+  padding-bottom:300px;
+}
 #sgbuild {
   z-index:9999;
   width: $col-len * $cel-width;
   position:fixed;
-  top:5px;
+  bottom:5px;
   left: 50%;
   margin-left: -($col-len * $cel-width)/2;
   box-shadow: 0 0 10px #3f4c83;
@@ -111,7 +114,7 @@ $h-max: 22;
           float: right;
           border-radius: 4px;
           position: fixed;
-          transform: translate(33px,-22px);
+          transform: translate($cel-width - 8px, (4px - $cel-height));
         }
       }
     }

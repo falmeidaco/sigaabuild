@@ -1,6 +1,6 @@
 #sgbuild
-  header SIGAABUILD - Visualize as disiciplinas - 
-    a(href='https://linkedin.com/in/falmeidaco', target='_blank') Criado por Felipe Almeida
+  header GRADE SIGAA - Visualize as disiciplinas - 
+    a(href='https://github.com/falmeidaco', target='_blank') Criado por Felipe Almeida
   main
     .sg-g
       .sg-g-i
@@ -9,7 +9,7 @@
           div(class='sg-c sg-c-w')= w
           - var t = 6;
           while t < 23
-            .sg-c(data-pos=w + t)= t + "h"
+            div(class='sg-c', data-pos=w + t)= t + "h"
             -t++
   footer
     .sg-o
