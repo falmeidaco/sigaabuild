@@ -1,0 +1,30 @@
+{
+  "name": "sgbuild",
+  "version": "1.0.0",
+  "description": "SIGAA Tool",
+  "main": "sgbuild.js",
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "beta": "node build.js",
+    "prod": "node build.js prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://falmeidaco@github.com/falmeidaco/sgbuild.git"
+  },
+  "keywords": [
+    "sigaa",
+    "js",
+    "css"
+  ],
+  "author": "Felipe Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falmeidaco/sgbuild/issues"
+  },
+  "homepage": "https://github.com/falmeidaco/sgbuild#readme"
+}
