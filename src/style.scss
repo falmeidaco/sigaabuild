@@ -25,6 +25,7 @@ $h-max: 22;
     color:white;
     a {
       color:white;
+      text-decoration:underline;
     }
   }
   main {
@@ -95,6 +96,19 @@ $h-max: 22;
       }
       .sg-b {
         margin-left: ($cel-width)/2;
+      }
+      .sg-m {
+        &:after {
+          content: "";
+          display: block;
+          width: 4px;
+          height: 4px;
+          background-color: #4CAF50;
+          float: right;
+          border-radius: 4px;
+          position: fixed;
+          transform: translate(33px,-22px);
+        }
       }
     }
   }
