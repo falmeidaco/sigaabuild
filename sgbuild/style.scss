@@ -6,6 +6,7 @@ $cel-height: 25px;
 $col-len: 18;
 $row-len: 6;
 $weekdays: seg ter qua qui sex sab;
+$colors: #F44336 #9C27B0 #4A148C #E91E63 #3F51B5 #2196F3 #E65100 #795548 #43A047 #827717;
 $h-min: 6;
 $h-max: 22;
 body {
@@ -84,8 +85,40 @@ body {
           z-index: 10;
         }
         a {
+          display:block;
           color: white;
           text-decoration:none;
+          position:relative;
+          &:hover:before {
+            position:absolute;
+            top: -($cel-height + 7);
+            left: 0;
+            content: attr(title);
+            background-color: rgba(black, 0.7);
+            font-size:9px;
+            font-weight: 100;
+            border-radius: 25px;
+            width: 300px;
+          }
+          &:hover:after {
+            position:absolute;
+            left: 15px;
+            top: -7px;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            content:"";
+            border: 5px solid rgba(black, 0.7);
+            border-left-color:transparent;
+            border-right-color:transparent;
+            border-bottom-color:transparent;
+          }
+        }
+      }
+      @for $i from 1 through length($colors) {
+        .sg-i-c#{$i} {
+          border-color: nth($colors, $i);
+          background-image: linear-gradient(rgba(nth($colors, $i), 0.5), rgba(nth($colors, $i), 1));
         }
       }
       @for $i from $h-min through $h-max {

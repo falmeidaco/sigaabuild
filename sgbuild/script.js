@@ -76,7 +76,7 @@ var sgb = {
         a.innerHTML = this.contents.html;
         document.getElementsByTagName('body')[0].appendChild(a);
     },
-    appendClass:function(id) {
+    appendClass:function(id, class_index) {
         var e, i, c = this.getClass(id);
         if (c.schedule !== null) {
             for (i = 0; i < c.schedule.length; i++) {
@@ -88,6 +88,7 @@ var sgb = {
                 e.classList.add('cid-' + id);
                 if ( parseInt(c.schedule[i].start.split(':')[1]) > 0 ) e.classList.add('sg-b');
                 if (c.schedule.length === 1) e.classList.add('sg-d');
+                if (typeof class_index === 'number') e.classList.add('sg-i-c' + class_index);
                 e.addEventListener('dblclick', function(ev) {
                     ev.preventDefault();
                     document.querySelector('input[value="'+id+'"]').checked = false;
@@ -118,7 +119,7 @@ var sgb = {
         var i, e = document.querySelectorAll('input[name="selecaoTurmas"]:checked');
         sgbuild.emptyGrid();
         for (i = 0; i < e.length; i++) {
-            sgbuild.appendClass(e[i].value)
+            sgbuild.appendClass(e[i].value, i+1)
         }
         if (e.length > 0) {
             document.querySelector('#sgbuild .sg-s').innerText = e.length + ' disciplina(s) selecionada(s).';
@@ -140,7 +141,6 @@ var sgb = {
                 e.innerText = sgbuild.data.db[k][i].detail.cod + ' - ' + sgbuild.data.db[k][i].detail.name + ' - ' + sgbuild.data.db[k][i].schedule_text;
                 e.addEventListener('click', function(ev) {
                     ev.preventDefault();
-                    console.log(ev);
                     document.querySelector('input[value="' + ev.target.hash.replace('#','') + '"]').checked = true;
                     sgbuild.buildGrid();
                 }, false);
